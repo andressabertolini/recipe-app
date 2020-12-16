@@ -4,22 +4,25 @@ import './App.css';
 
 const App = () => {
 
-  const [counter, setCounter] = useState(0);
   const recipes = [
     {
       item: {
-        title: "Recipe 1",
-        ingredients: "Ingredients"
-      },
+        title: "Pavê",
+        description: "Ingredients",
+        image: "pave.jpg"
+      }
+    },
+    {
       item: {
-        title: "Recipe 2",
-        ingredients: "Ingredients"
+      title: "Recipe 2",
+      description: "Ingredients",
+      image: "jias"
       }
     }
   ];
 
   useEffect(() =>{
-
+  
   },[]);
 
   return(
@@ -29,7 +32,15 @@ const App = () => {
         <button type="submit" className="search-button">Search</button>
       </form>
 
-      <Recipe />
+      {recipes.map((recipe, index) => (
+        <Recipe 
+          key={index}
+          title={recipe.item.title} 
+          description={recipe.item.description} 
+          image={recipe.item.image}
+        />
+      ))}
+      
     </div>
   );
 }
