@@ -2,6 +2,8 @@ import React,{useEffect, useState} from "react";
 import Recipe from './Recipe';
 import './App.css';
 
+import chefHat from './assets/img/chef-hat.png';
+
 const App = () => {
 
   const recipes = [
@@ -14,21 +16,21 @@ const App = () => {
     },
     {
       item: {
-      title: "Recipe 2",
+      title: "Hot Chocolate",
       description: "Ingredients",
-      image: "jias"
+      image: "hot-chocolate.jpg"
       }
     }
   ];
 
-  useEffect(() =>{
-  
-  },[]);
+  const[search, setSearch] = useState("");
 
   return(
-    <div className="App">
+    <div className="app">
+      <img src={chefHat} />
+      <h1>Recipe Book</h1>
       <form className="search-form">
-        <input type="text" className="search-bar"/>
+        <input type="text" className="search-bar" value={search}/>
         <button type="submit" className="search-button">Search</button>
       </form>
 
