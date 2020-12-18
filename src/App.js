@@ -6,40 +6,50 @@ import chefHat from './assets/img/chef-hat.png';
 
 const App = () => {
 
-  const recipes = [
-    {
-      item: {
-        title: "Pavê",
-        description: "Ingredients",
-        image: "pave.jpg"
-      }
-    },
-    {
-      item: {
-      title: "Hot Chocolate",
-      description: "Ingredients",
-      image: "hot-chocolate.jpg"
-      }
-    }
-  ];
+  const API_ID = "4268b762";
+  const API_KEY = "8acb3c74dd6b60e9300b96e0a92f22ef";
 
-  const[search, setSearch] = useState("");
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("")
+  const [query, setQuery] = useState("");
+
+  const getRecipes = async () => {
+    const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${API_ID}&app_key=${API_KEY}`);
+    const data = await response.json();
+    setRecipes(data.hits);
+    console.log(data);
+  }
+
+  const updateSearch = e => {
+    setSearch(e.target.value);
+  }
+
+  const getSearch = e => {
+    e.preventDefault();
+    setQuery(search);
+  }
+
+  useEffect(() => {
+    console.log("hehehe");
+    getRecipes();
+    console.log(setRecipes);
+  },[]);
 
   return(
     <div className="app">
       <img src={chefHat} />
       <h1>Recipe Book</h1>
-      <form className="search-form">
-        <input type="text" className="search-bar" value={search}/>
+      <form className="search-form" onSubmit={getSearch}>
+        <input type="text" className="search-bar" value={search} onChange={updateSearch}/>
         <button type="submit" className="search-button">Search</button>
       </form>
 
       {recipes.map((recipe, index) => (
         <Recipe 
           key={index}
-          title={recipe.item.title} 
-          description={recipe.item.description} 
-          image={recipe.item.image}
+          title={recipe.recipe.label} 
+          description={recipe.recipe.label} 
+          image={recipe.recipe.image}
         />
       ))}
       
