@@ -1,10 +1,14 @@
 body{
-  background-color: #b8e6f3;
+  background-color: #94b6bf;
   padding: 20px;
 }
 
 .app {
   text-align: center;
+}
+
+.app h1{
+  color: #1c4480;
 }
 
 .container{
@@ -18,19 +22,27 @@ body{
 }
 
 .search-bar{
-  border: 1px solid #aaa;
+  border: none;
   padding: 10px 14px;
   border-radius: 5px;
   margin-right: 5px;
+  outline: none;
 }
 
 .search-button{
-  border: 1px solid #1355ce;
+  border: 1px solid #1c4480;
   padding: 10px 14px;
   border-radius: 5px;
   text-transform: uppercase;
   background-color: transparent;
-  color: #1355ce;
+  color: #1c4480;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-button:hover{
+  color: white;
+  background-color: #1c4480;
 }
 
 .recipe-item{
@@ -39,6 +51,7 @@ body{
   margin-bottom: 20px;
   width: 100%;
   overflow: hidden;
+  height: 201px;
 }
 
 @media(min-width: 992px){
@@ -54,8 +67,15 @@ body{
   width: 50%;
 }
 
+.recipe-item h2{
+  font-size: 1.2em;
+}
+
 .recipe-item .content{
-  padding: 15px;
+  padding: 13px;
+  float: right;
+  width: 50%;
+  box-sizing: border-box;
 }
 
 .recipe-item a{
