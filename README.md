@@ -7,3 +7,18 @@ This is being developed from a tutorial for study purposes: https://youtu.be/U9T
 # Live Demo
 
 https://andressabertolini.github.io/recipe-app/
+
+# How to execute
+
+just type npm start in your console.
+
+If it doesn't work, try:
+
+- npm install
+- do you have node installed?
+
+That's all folks,
+
+Thank you :)
+
+Keep learning
