@@ -1,21 +1,25 @@
 # About this app
 
-This is a ReactJS project that brings recipes from an API, so you can search for many types of recipesa and it will show a card with its name and description, and you can click to visualize the external link with the full recipe page.
+This is a ReactJS project that brings recipes from an API, so you can search for many types of recipes and it will show recipe cards as results, with name and description, and you can click to visualize the external link with the full recipe page.
 
-This is being developed from a tutorial for study purposes: https://youtu.be/U9T6YkEDkMo
+This was developed from a tutorial for study purposes: https://youtu.be/U9T6YkEDkMo
+
+<br />
 
 # Live Demo
-
+If you're like me and is always in a rush, just see the live demo, with no need to clone the project and set up the enviroment:
 https://andressabertolini.github.io/recipe-app/
+
+[![Alt text](thumbnail.png?raw=true "Weather App Preview")](https://andressabertolini.github.io/weather-app/)
+
 
 # How to execute
 
-just type npm start in your console.
-
-If it doesn't work, try:
-
+Run in terminal:
 - npm install
-- do you have node installed?
+- npm start
+
+<br />
 
 That's all folks,
 
