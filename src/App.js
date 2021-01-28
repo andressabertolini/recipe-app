@@ -11,7 +11,7 @@ const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("")
-  const [query, setQuery] = useState("banana");
+  const [query, setQuery] = useState("chocolate");
 
   const getRecipes = async () => {
     const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}`);
